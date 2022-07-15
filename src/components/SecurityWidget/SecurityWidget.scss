@@ -1,0 +1,22 @@
+button {
+  border        : 0;
+  padding       : 10px;
+  border-radius : 4px;
+  text-transform: uppercase;
+  cursor        : pointer;
+  box-shadow    : rgba(0, 0, 0, 0.3) 1px 1px 5px;
+}
+
+button:active {
+  box-shadow: rgba(0, 0, 0, 0.3) 1px 1px 5px inset;
+}
+
+.devk__security--primary {
+  background-color: blue;
+  color           : white;
+}
+
+.devk__security--secondary {
+  background-color: yellow;
+  color           : black;
+}
