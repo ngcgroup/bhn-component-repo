@@ -26,6 +26,8 @@ module.exports = {
     "../src/**/*.stories.mdx", 
     "../src/**/*.stories.@(js|jsx|ts|tsx)",
     '../packages/bhn-security-widget/src/**/*.stories.@(js|jsx|ts|d.ts|tsx)',
+    '../packages/bhn-identity-widget/src/**/*.stories.@(js|jsx|ts|d.ts|tsx)',
+
   ],
   //presets: ['@storybook/addon-docs/preset'],
 
