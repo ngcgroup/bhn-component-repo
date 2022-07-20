@@ -1,21 +1,20 @@
 {
-  "name": "@bhn-components/design-system",
+  "name": "@bhn-components/bhn-security-widget",
   "publishConfig": {
     "registry": "https://registry.npmjs.org/",
     "access": "public"
   },
   "repository": {
-    "url": "https://github.com/ppulwey/remake-lib"
+    "url": "https://github.com/ngcgroup/bhn-component-repo"
   },
-  "funding": "https://www.buymeacoffee.com/ppulwey",
   "version": "0.0.11",
-  "description": "This is a react library for remake",
+  "description": "BHN Security Widget",
   "scripts": {
     "prepublish": "rm -rf dist && npm run rollup",
     "rollup": "rollup -c",
     "rollup:watch": "rollup -c -w",
     "test": "jest",
-    "storybook": "start-storybook -p 6006",
+    "storybook": "start-storybook -p 6005",
     "build-storybook": "build-storybook"
   },
   "author": "Prabhu Inbarajan",

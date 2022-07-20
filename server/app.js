@@ -21,7 +21,7 @@ const port = 8080
 app.use(cookies());
 app.use(cors({
   credentials: true,
-  origin: 'http://localhost:6005'
+  origin: [ 'http://localhost:6005', 'http://localhost:6006',] 
 }));
 
 app.use(function(req, resp, next) {

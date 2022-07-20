@@ -1214,6 +1214,15 @@
   "resolved" "https://registry.npmjs.org/@bcoe/v8-coverage/-/v8-coverage-0.2.3.tgz"
   "version" "0.2.3"
 
+"@bhn-components/bhn-security-widget@file:packages/bhn-security-widget/dist":
+  "resolved" "file:packages/bhn-security-widget/dist"
+  "version" "0.0.11"
+  dependencies:
+    "@storybook/addon-docs" "^6.5.9"
+    "dotenv" "^16.0.1"
+    "env-cmd" "^10.1.0"
+    "react-scripts" "^5.0.1"
+
 "@cnakazawa/watch@^1.0.3":
   "integrity" "sha512-v9kIhKwjeZThiWrLmj0y17CWoyddASLj9O2yvbZkbvw/N3rWOYy9zkV66ursAoVr0mV15bL8g0c4QZUE6cdDoQ=="
   "resolved" "https://registry.npmjs.org/@cnakazawa/watch/-/watch-1.0.4.tgz"

@@ -22,7 +22,11 @@ function injectEnv(definitions) {
 };
 
 module.exports = {
-  stories: ["../src/**/*.stories.mdx", "../src/**/*.stories.@(js|jsx|ts|tsx)"],
+  stories: [
+    "../src/**/*.stories.mdx", 
+    "../src/**/*.stories.@(js|jsx|ts|tsx)",
+    '../packages/bhn-security-widget/src/**/*.stories.@(js|jsx|ts|d.ts|tsx)',
+  ],
   //presets: ['@storybook/addon-docs/preset'],
 
   addons: [
