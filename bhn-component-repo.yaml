@@ -14,9 +14,9 @@ metadata:
   namespace: designsystem
 spec:
   ports:
-    - name: "http"
-      port: 8080
-      targetPort: 8080
+    - name: "https"
+      port: 8443
+      targetPort: 8443
   selector:
     com.bhn.service: storybook
 ---
@@ -43,13 +43,21 @@ spec:
             - name: PLACEHOLDER
               value: "true"
           image: 982306614752.dkr.ecr.us-west-2.amazonaws.com/bhn-component-repo:latest
+          volumeMounts:
+          - mountPath: "/usr/src/app/server/certs"
+            name: designsystem-express-cert
+            readOnly: true
           name: storybook
           ports:
-            - containerPort: 8080
+            - containerPort: 8443
           resources: {}
           envFrom:
             - configMapRef:
                 name: env-bindings-cm
+      volumes:
+        - name: designsystem-express-cert
+          secret:
+            secretName: designsystem-express-cert    
       restartPolicy: Always
 status: {}
 ---
@@ -63,7 +71,9 @@ metadata:
     app.kubernetes.io/part-of: ingress-nginx
   annotations:
     kubernetes.io/ingress.class: "nginx"
-    #nginx.ingress.kubernetes.io/backend-protocol: "HTTPS" 
+#    nginx.ingress.kubernetes.io/configuration-snippet: |
+#      more_set_headers "X-Forwarded-Proto: https";
+    nginx.ingress.kubernetes.io/backend-protocol: "HTTPS" 
 spec:
   #ingressClassName: nginx
   tls:
@@ -80,7 +90,7 @@ spec:
             service:
               name: storybook
               port:
-                number: 8080
+                number: 8443
 ---
 #regexp=(https://developer.internal.bhn.technology/devportal/services/auth/callback/login|https://developer.internal.bhn.technology/devportal/services/auth/callback/logout)
 #regexp=(https://developer.internal.bhn.technology/services/auth/callback/login|https://developer.internal.bhn.technology/services/auth/callback/logout)

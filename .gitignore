@@ -4,3 +4,5 @@ dist
 .vscode/*.code-workspace
 storybook-static
 **/env-file
+*.key
+*.crt

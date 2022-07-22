@@ -78,6 +78,7 @@
     "@storybook/addon-docs": "^6.5.9",
     "dotenv": "^16.0.1",
     "env-cmd": "^10.1.0",
+    "react-cookie": "^4.1.1",
     "react-scripts": "^5.0.1"
   }
 }

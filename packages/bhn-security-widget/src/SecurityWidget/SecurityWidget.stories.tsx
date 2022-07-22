@@ -2,14 +2,19 @@ import { ComponentMeta, ComponentStory } from "@storybook/react";
 import React from "react";
 import CaptchaToggleWidget from "./CaptchaToggleWidget";
 import SecurityWidget from "./SecurityWidget";
+import { CookiesProvider } from 'react-cookie';
+
 
 export default {
   title: "BHN/SecurityWidget",
   component: SecurityWidget,
   decorators: [
-    (Story) => (
+    (Story, context) => (
       <div>
-        <CaptchaToggleWidget/>
+        <CookiesProvider>
+          <Story/>
+          <CaptchaToggleWidget/>
+        </CookiesProvider>
       </div>
     ),
   ],

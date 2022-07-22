@@ -1,4 +1,5 @@
 import React, { PropsWithChildren, useEffect, useState } from "react";
+//import { useCookies } from 'react-cookie';
 import "./CaptchaToggleWidget.scss";
 
 
@@ -6,6 +7,8 @@ const CaptchaToggleWidget = () => {
 
   
   const [captchaState, setCaptchaState] =useState(sessionStorage.getItem('trigger-captcha') == 'true');
+  //const [cookies, setCookie,removeCookie] = useCookies(['datadome']);
+
   const [dataDomeKey, setDataDomeKey] = useState(sessionStorage.getItem('datadomeClientKey'));
   const [foo, setFoo] = useState(null);
   const [localfoo, setLocalFoo]= useState(null);
@@ -25,12 +28,19 @@ const CaptchaToggleWidget = () => {
     setCaptchaState(false)
     return false;
   }
+
+  function clearTest() {
+    alert('delete the datadome cookie from browser')
+    return false;
+  }
+
   function testSecurityWidget() {
     //alert('Hello!');
     console.log('hello');
     var captcha=sessionStorage.getItem('trigger-captcha');
     const headers:any = { 
       'Content-Type': 'application/json' , 
+      'accept': 'application/json' , 
       'captcha': sessionStorage.getItem('trigger-captcha') as string,
     };
     if(captcha=='true') {
@@ -38,6 +48,7 @@ const CaptchaToggleWidget = () => {
     }
     const value=localfoo;
     const url=`/api?foo=${value}`;
+    //const url=`http://localhost:8080/api?foo=${value}`;
 
     fetch(url, { credentials: 'include', method: 'GET', headers: headers})
         .then( (response: any) => response.json())
@@ -81,6 +92,12 @@ const CaptchaToggleWidget = () => {
           className={ "devk__security--other" }
           onClick={testSecurityWidget}>
               Test Datadome
+        </button>
+
+        <button
+          className={ "devk__security--clear" }
+          onClick={clearTest}>
+              Clear Test
         </button>
     </div>
   );

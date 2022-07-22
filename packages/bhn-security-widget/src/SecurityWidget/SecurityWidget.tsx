@@ -17,14 +17,15 @@ const SecurityWidget = ({ datadome_key }: PropsWithChildren<ISecurityWidget>) =>
     const s = document.getElementById('datadome-script')? document.getElementById('datadome-script') : document.createElement('script');
     if(!s.id) {
       s.id =  'datadome-script';
-    } 
-    s.type = 'text/javascript';
-    s.async = true;
-    s.innerHTML = '!function(a,b,c,d,e,f){a.ddjskey=e;a.ddoptions=f||null;var m=b.createElement(c),n=b.getElementsByTagName(c)[0];m.async=1,m.src=d,n.parentNode.insertBefore(m,n)}(window,document,"script","https://js.datadome.co/tags.js","' + datadome_key + '", { ajaxListenerPath : ["/api", "domain.com/other-api"], allowHtmlContentTypeOnCaptcha : true });';
-    document.head.appendChild(s);
+      s.type = 'text/javascript';
+      s.async = true;
+      s.innerHTML = '!function(a,b,c,d,e,f){a.ddjskey=e;a.ddoptions=f||null;var m=b.createElement(c),n=b.getElementsByTagName(c)[0];m.async=1,m.src=d,n.parentNode.insertBefore(m,n)}(window,document,"script","https://js.datadome.co/tags.js","' + datadome_key + '", { ajaxListenerPath : ["/api", "domain.com/other-api"], allowHtmlContentTypeOnCaptcha : true });';
+      document.head.appendChild(s);
+      console.log('widget loaded successfully')
+    }   
   });
   return (
-    <div></div>
+    <div id="dd"></div>
   );
 
 };

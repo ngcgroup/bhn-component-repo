@@ -1,4 +1,7 @@
 const express = require('express')
+const https = require('https')
+const fs = require('fs')
+
 var cookies = require("cookie-parser");
 const path = require('path');
 const dotenv = require('dotenv');
@@ -22,7 +25,9 @@ const datadomeClient = new DataDome(process.env.DATADOME_SERVER_KEY, process.env
 
 
 const app = express()
-const port = 8080
+const port = 8443
+const httpport = 8080
+
 app.use(cookies());
 app.use(cors({
   credentials: true,
@@ -93,10 +98,15 @@ app.get('/api', (req, res) => {
   
 })
 
-app.listen(port, () => {
+/*app.listen(httpport, () => {
+  console.log(`Example app listening on port ${httpport}`)
+})
+*/
+
+https.createServer({key: fs.readFileSync('certs/tls.key'),
+cert: fs.readFileSync('certs/tls.crt')}, app).listen(port, () => {
   console.log(`Example app listening on port ${port}`)
 })
-
 
 //route protected with Keycloak 
 app.get('/test', keycloak.protect(), function(req, res){
