@@ -30,7 +30,7 @@ const headers:any = {
   
 };
 
-const url=`http://localhost:8080/config`;
+const url=`/config`;
 
 if ( !sessionStorage.getItem('datadome_key'))  {
 fetch(url, { credentials: 'include', method: 'GET', headers: headers})

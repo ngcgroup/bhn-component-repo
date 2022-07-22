@@ -26,7 +26,7 @@ const port = 8080
 app.use(cookies());
 app.use(cors({
   credentials: true,
-  origin: [ 'http://localhost:6005', 'http://localhost:6006',] 
+  origin: [ 'http://localhost:6005', 'http://localhost:6006', 'https://designsystem.internal.bhn.technology'] 
 }));
 
 

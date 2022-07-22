@@ -37,8 +37,8 @@ function parse_args() {
         shift # past argument
         #shift # past value
         ;;                
-       -s|--skip-download)
-        skip_download="true"
+       -b|--force-build)
+        force_build="true"
         shift # past argument
         #shift # past value
         ;; 
@@ -97,7 +97,7 @@ function docker_push() {
 
 function docker_create_repository() {
     if [ "$docker_cr" == "true" ]; then
-      aws ecr create-repository $profile\
+      aws ecr create-repository --profile $profile\
 >     --repository-name $1
     fi
 }

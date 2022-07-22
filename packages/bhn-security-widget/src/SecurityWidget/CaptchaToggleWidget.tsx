@@ -37,7 +37,7 @@ const CaptchaToggleWidget = () => {
       headers['User-Agent'] = 'NOUA';
     }
     const value=localfoo;
-    const url=`http://localhost:8080/api?foo=${value}`;
+    const url=`/api?foo=${value}`;
 
     fetch(url, { credentials: 'include', method: 'GET', headers: headers})
         .then( (response: any) => response.json())

@@ -11,9 +11,12 @@ set -x -e
 
 registry=982306614752.dkr.ecr.us-west-2.amazonaws.com
 build_image="bhn-component-repo-build:latest"
-#docker build -t $build_image . -f Dockerfile-build
+if [ "$force_build" == "true" ]; then 
+  docker build -t $build_image . -f Dockerfile-build
+fi
 image="bhn-component-repo:latest"
 docker build -t $image . -f Dockerfile-runtime
+
 docker tag $image $registry/$image
 docker_login $registry
 docker_push $registry/$image
