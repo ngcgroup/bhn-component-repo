@@ -1,0 +1,24 @@
+{
+  "realm": "designsystem",
+  "enabled": true,
+  "accessTokenLifespan": 60,
+  "accessCodeLifespan": 60,
+  "accessCodeLifespanUserAction": 300,
+  "ssoSessionIdleTimeout": 600,
+  "ssoSessionMaxLifespan": 36000,
+  "sslRequired": "external",
+  "registrationAllowed": false,
+   "requiredCredentials": [ "password" ],
+  "roles" : {
+      "realm" : [
+          {
+              "name": "user",
+              "description": "User privileges"
+          },
+          {
+              "name": "admin",
+              "description": "Administrator privileges"
+          }
+      ]
+  }
+}

@@ -1,0 +1,10 @@
+{
+    "realm": "designsystem",
+    "bearer-only": false,
+    "public-client": true,
+    "auth-server-url": "https://iam.bhn.technology/auth",
+    "ssl-required": "external",
+    "resource": "storybook",
+    "clientId": "storybook"
+
+  }

@@ -1,0 +1,5 @@
+{
+    "clientId": "storybook",
+    "enabled": true,
+    "bearerOnly": true
+}

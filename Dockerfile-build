@@ -1,0 +1,12 @@
+FROM node:18-alpine3.15
+RUN apk add --no-cache bash
+WORKDIR /usr/src/app
+COPY package*.json ./
+COPY . .
+RUN cd /usr/src/app && ./build-packages.sh
+RUN npm install --legacy-peer-deps && npm run build-storybook
+#RUN cd server && npm install && cd -
+#EXPOSE 8080
+#EXPOSE 6006
+#CMD ["sh", "run.sh"]
+#CMD ["node", "app.js"]

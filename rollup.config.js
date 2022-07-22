@@ -35,10 +35,11 @@ export default [
       terser(),
     ],
   },
-  {
+/*  {
     input: "dist/esm/types/index.d.ts",
     output: [{ file: "dist/index.d.ts", format: "esm" }],
     plugins: [dts()],
     external: [/\.(css|less|scss)$/],
   },
+*/
 ];
