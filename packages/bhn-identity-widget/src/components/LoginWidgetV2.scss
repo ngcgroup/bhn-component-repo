@@ -1,0 +1,28 @@
+@import url(https://iam.bhn.technology/auth/resources/xdtif/common/keycloak/web_modules/@patternfly/react-core/dist/styles/base.css);
+@import url(https://iam.bhn.technology/auth/resources/xdtif/common/keycloak/node_modules/patternfly/dist/css/patternfly-additions.min.css);
+@import url(https://iam.bhn.technology/auth/resources/xdtif/common/keycloak/web_modules/@patternfly/react-core/dist/styles/app.css);
+@import url(https://iam.bhn.technology/auth/resources/xdtif/common/keycloak/node_modules/patternfly/dist/css/patternfly.min.css);
+@import url(https://iam.bhn.technology/auth/resources/xdtif/common/keycloak/lib/pficon/pficon.css);
+@import url(https://iam.bhn.technology/auth/resources/xdtif/login/bhn-iam/css/login.css);
+@import url(https://iam.bhn.technology/auth/resources/xdtif/login/bhn-iam/css/tile.css);
+@import url(https://iam.bhn.technology/auth/resources/xdtif/login/bhn-iam/css/bhn-login.css);
+
+.login-form {
+  width: 100%;
+  max-width: 330px;
+  padding: 15px;
+  margin: auto;
+  height: 100%;
+}
+
+.devk__container {
+  padding         : 1rem;
+  background-color: cadetblue;
+  border-color    : blue;
+  border-radius   : 10px;
+  width           : 100%;
+}
+
+.btn {
+  width: 100%;
+}
