@@ -15,7 +15,12 @@
     "rollup:watch": "rollup -c -w",
     "test": "jest",
     "storybook": "start-storybook -p 6005",
-    "build-storybook": "build-storybook"
+    "build-storybook": "build-storybook",
+    "build": "npm run build:dist && npm run build:bundle",
+    "build:dev": "npm run build:dist && npm run build:bundle-dev",
+    "build:dist": "rm -rf dist && mkdir dist && babel src -d dist --copy-files --no-copy-ignored",
+    "build:bundle": "webpack --mode production",
+    "build:bundle-dev": "webpack --mode development"
   },
   "author": "Prabhu Inbarajan",
   "license": "ISC",
@@ -58,7 +63,8 @@
     "sass": "^1.51.0",
     "sass-loader": "^13.0.0",
     "style-loader": "^3.3.1",
-    "typescript": "^4.6.4"
+    "typescript": "^4.6.4",
+    "webpack-cli": "^4.10.0"
   },
   "peerDependencies": {
     "react": "^18.1.0",
@@ -76,9 +82,11 @@
   "types": "dist/index.d.ts",
   "dependencies": {
     "@storybook/addon-docs": "^6.5.9",
+    "babel-cli": "^6.26.0",
     "dotenv": "^16.0.1",
     "env-cmd": "^10.1.0",
     "react-cookie": "^4.1.1",
-    "react-scripts": "^5.0.1"
+    "react-scripts": "^5.0.1",
+    "ts-loader": "^9.3.1"
   }
 }

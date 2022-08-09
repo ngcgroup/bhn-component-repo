@@ -6,3 +6,4 @@ storybook-static
 **/env-file
 *.key
 *.crt
+bundle
