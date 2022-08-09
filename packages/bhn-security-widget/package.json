@@ -1,8 +1,7 @@
 {
-  "name": "@bhn-components/bhn-security-widget",
+  "name": "@ngcgroup/bhn-security-widget",
   "publishConfig": {
-    "registry": "https://registry.npmjs.org/",
-    "access": "public"
+    "registry": "https://npm.pkg.github.com"
   },
   "repository": {
     "url": "https://github.com/ngcgroup/bhn-component-repo"
